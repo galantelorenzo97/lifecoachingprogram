@@ -1,0 +1,24 @@
+INSERT INTO Clients (client_id, client_fname, client_lname, salary, email, coaching_needs, joined_date)
+	VALUES
+		(NULL, "John", "Doe", 120000, "jdoe@gmail.com", "Something something something", '2023-07-01'),
+		(NULL, "Jane", "Doe", 115000, "jane.doe@hotmail.com", "Something completely different", '2023-07-04'),
+		(NULL, "James", "Magoo", 86000, "jmags@aol.com", "Senility", '2023-07-07');
+
+INSERT INTO Coaches (coach_id, coach_fname, coach_lname, hire_date, dism_date)
+	VALUES
+		(NULL, "Chad", "Nygaard", '2023-01-01', NULL),
+		(NULL, "Arlandia", "Blundmeyer", '2022-05-06', '2022-05-13'),
+		(NULL, "Yevgeny", "Lugash", '2021-04-15', NULL);
+
+INSERT INTO Coaching_Types (coty_id, description)
+	VALUES
+		(NULL, "Life coaching"),
+		(NULL, "Relationship coaching"),
+		(NULL, "Career coaching");
+
+INSERT INTO Service_Costs (seco_id, min_salary, max_salary, price)
+	VALUES
+		(NULL, 0, 60000, 100),
+		(NULL, 60001, 75000, 130),
+		(NULL, 75001, 100000, 165),
+		(NULL, 100001, NULL, 200);

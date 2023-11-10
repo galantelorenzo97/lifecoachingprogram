@@ -1,0 +1,2 @@
+Adjust the sample_config.json to your DBs settings and rename to config.json.
+Use the sqlconn.json to select between Development, Testing and Production environment

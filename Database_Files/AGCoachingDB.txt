@@ -1,0 +1,47 @@
+CREATE TABLE Clients
+	(client_id      INT             NOT NULL	AUTO_INCREMENT,
+	 client_fname	VARCHAR(50)	    NOT NULL,
+	 client_lname   VARCHAR(50)		NOT NULL,
+     salary         INT             NOT NULL,
+     email          VARCHAR(50)     NOT NULL,
+     coaching_needs VARCHAR(500)    NULL,
+     joined_date    DATE            NULL,
+CONSTRAINT Client_PK PRIMARY KEY (client_id));	
+
+CREATE TABLE Coaches
+	(coach_id		INT				NOT NULL	AUTO_INCREMENT,
+	 coach_fname	VARCHAR(50)		NOT NULL,
+	 coach_lname	VARCHAR(50)		NOT NULL,
+	 hire_date		DATETIME		NOT NULL,
+	 dism_date		DATETIME		NULL,	
+CONSTRAINT Coach_PK PRIMARY KEY (coach_id));
+
+CREATE TABLE Coaching_Types
+	(coty_id		INT				NOT NULL	AUTO_INCREMENT,
+	 description			VARCHAR(250)	NOT NULL,
+CONSTRAINT Coty_PK PRIMARY KEY (coty_id));
+
+CREATE TABLE Service_Costs
+	(seco_id		INT				NOT NULL	AUTO_INCREMENT,
+	 min_salary		INT				NOT NULL,
+	 max_salary		INT 			NULL,
+	 price 			INT				NOT NULL,
+CONSTRAINT Seco_PK PRIMARY KEY (seco_id));	
+
+CREATE TABLE Coaching_Sessions
+	(cose_id		INT				NOT NULL	AUTO_INCREMENT,
+	 coty_id		INT				NOT NULL,
+	 coach_id		INT				NOT NULL,
+	 start_time		DATETIME		NOT NULL,
+	 end_time		DATETIME		NOT NULL,
+CONSTRAINT Cose_PK PRIMARY KEY (cose_id),
+CONSTRAINT CotyCose_FK FOREIGN KEY (coty_id) REFERENCES Coaching_Types(coty_id),
+CONSTRAINT CoachCose_FK FOREIGN KEY (coach_id) REFERENCES Coaches(coach_id));
+
+CREATE TABLE Client_Groups
+	(clgr_id		INT				NOT NULL 	AUTO_INCREMENT,
+	 cose_id		INT				NOT NULL,
+	 client_id		INT				NOT NULL,
+CONSTRAINT Clgr_PK PRIMARY KEY (clgr_id),
+CONSTRAINT CoseClgr_FK FOREIGN KEY (cose_id) REFERENCES Coaching_Sessions(cose_id),
+CONSTRAINT ClientClgr_FK FOREIGN KEY (client_id) REFERENCES Clients(client_id));

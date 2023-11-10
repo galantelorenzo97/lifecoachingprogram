@@ -1,0 +1,30 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Backend for the life coaching program",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/galantelorenzo97/lifecoachingprogram.git"
+  },
+  "author": "Lorenzo Galante, Hiba Iqbal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/galantelorenzo97/lifecoachingprogram/issues"
+  },
+  "homepage": "https://github.com/galantelorenzo97/lifecoachingprogram#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.6.0",
+    "sequelize": "^6.33.0",
+    "sequelize-cli": "^6.6.1",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
