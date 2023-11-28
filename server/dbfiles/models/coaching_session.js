@@ -20,8 +20,8 @@ function create() {
     timestamps: false
   });
 
-  CoachingSession.belongsTo(CoachingType, { foreignKey: 'coty_id' });
-  CoachingSession.belongsTo(Coach, { foreignKey: 'coach_id' });
+  //CoachingSession.belongsTo(CoachingType, { foreignKey: 'coty_id' });
+  //CoachingSession.belongsTo(Coach, { foreignKey: 'coach_id' });
 
   return CoachingSession;
 }

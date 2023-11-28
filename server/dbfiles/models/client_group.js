@@ -10,11 +10,12 @@ function create() {
       autoIncrement: true
     }
   }, {
+    tableName: 'client_groups',
     timestamps: false
   });
 
-  ClientGroup.belongsTo(CoachingSession, { foreignKey: 'cose_id' });
-  ClientGroup.belongsTo(Client, { foreignKey: 'client_id' });
+  //ClientGroup.belongsTo(CoachingSession, { foreignKey: 'cose_id' });
+  //ClientGroup.belongsTo(Client, { foreignKey: 'client_id' });
 
   return ClientGroup;
 }
